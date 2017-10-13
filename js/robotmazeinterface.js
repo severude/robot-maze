@@ -99,9 +99,9 @@ RobotMazeInterface.prototype.renderSpace = function (x,y) {
     southRobot: "icon-user",
     westRobot: "icon-user",
     northRobotStart: "icon-user",
-    eastRobotStart: "icon-circle-arrow-right",
-    southRobotStart: "icon-circle-arrow-down",
-    westRobotStart: "icon-circle-arrow-left",
+    eastRobotStart: "icon-user",
+    southRobotStart: "icon-user",
+    westRobotStart: "icon-user",
     robotEnd: "icon-ok-sign "
   }  
   var $space = $('<i>');
@@ -187,7 +187,7 @@ RobotMazeInterface.prototype.renderControls = function () {
     }
   }
 
-  if (this.robot.maze != this.maze) {
+  if (this.robot.maze != this.maze || (this.maze.endX == this.robot.x && this.maze.endY == this.robot.y)) {
     $robot = $('<i class="robot icon-user"></i>').appendTo($actions);
   }  
 
